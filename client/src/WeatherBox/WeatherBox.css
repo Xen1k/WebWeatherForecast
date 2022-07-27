@@ -1,0 +1,23 @@
+.weather-data-container {
+    display: flex;
+    width: 500px;
+    height: 250px;
+    color: white;
+    border-radius: 5px;
+    margin: 20px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.weather-inner-container {
+    display: flex;
+    flex: 1.5;
+    background-color: white;
+    width: 100%;
+    color: black;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
