@@ -12,7 +12,7 @@ const ForecastController = () => {
     const getForecastData = async () => {
         if (city.length === 0)
             alert('Input city first')
-        const resData = await axios.post("http://localhost:80/forecast", { city: city });
+        const resData = await axios.post("https://weather-forecast-xenik-server.herokuapp.com/forecast", { city: city });
         if (!resData.data.name)
             alert('Invalid city')
         else
