@@ -5,9 +5,11 @@ const cors = require('cors')
 app.use(cors({origin: true, credentials: true}));
 
 app.use(express.json({extended: true}));
-app.use("/", require("./routes/forecast"));
+app.use("/", require("./forecast"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => res.send('Weather Forecast'));
 
 const PORT = process.env.PORT || 80;
 app.listen(PORT, () => console.log("Started server!"));
