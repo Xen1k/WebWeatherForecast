@@ -9,5 +9,7 @@ app.use("/", require("./forecast"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => res.send('Weather Forecast'));
+
 const PORT = process.env.PORT || 80;
 app.listen(PORT, () => console.log("Started server!"));
