@@ -39,8 +39,8 @@ const WeatherBoxController = ({ weatherData }: any): JSX.Element => {
             weatherData={weatherData}
             getWeatherImage={getWeatherImage}
             getTimeString={getTimeString}
-            getThemeColor={getThemeColor}
             getDateString={getDateString}
+            getThemeColor={getThemeColor}
         />
     )
 }
