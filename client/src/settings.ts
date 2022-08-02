@@ -1,0 +1,1 @@
+export let forecastFinderUrl: string = " https://weather-forecast-xenik-server.herokuapp.com/forecast";
