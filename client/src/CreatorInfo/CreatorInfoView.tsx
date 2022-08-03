@@ -1,6 +1,6 @@
 import './CreatorInfo.css'
 
-const CreatorInfoView = (props: any): JSX.Element => (
+const CreatorInfoView = (): JSX.Element => (
     <div className="info-container">
         <div style={{ display: 'flex', flex: 1, justifyContent: 'flex-end' }}>
             <img src={require('./images/voenmeh.jpg')} style={{ height: 230, marginTop: 25 }} />

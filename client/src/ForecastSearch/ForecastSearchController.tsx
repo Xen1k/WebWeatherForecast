@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import ForecastSearchView from './ForecastSearchView'
-import axios from 'axios';
-import { forecastFinderUrl } from '../settings';
+import { getWeatherData, IWeatherData } from '../weatherData';
 
 const ForecastSearchController = (): JSX.Element => {
 
     const [city, setCity] = useState<string>('')
-    const [weatherData, setWatherData] = useState<object>()
+    const [weatherData, setWatherData] = useState<IWeatherData | undefined>()
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
 
@@ -16,11 +15,8 @@ const ForecastSearchController = (): JSX.Element => {
         setIsLoading(true);
         if (city.length === 0)
             alert('Вы не ввели город')
-        const resData = await axios.post(forecastFinderUrl, { city: city });
-        if (!resData.data.name)
-            alert('Такого города нет')
-        else
-            setWatherData({ ...resData.data, city: city });
+        const resData: IWeatherData | undefined = await getWeatherData(city);
+        resData ? setWatherData(resData) :  alert('Такого города нет');
         setIsLoading(false);
     }
 

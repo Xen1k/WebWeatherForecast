@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { forecastFinderUrl } from "../settings";
+import { getWeatherData, IWeatherData } from "../weatherData";
 import TrendingCitiesView from "./TrendingCitiesView";
 
 const TrendingCitiesController = (): JSX.Element => {
     const trendingCities: string[] = ['Лондон', 'Нью-Йорк', 'Москва', 'Санкт Петербург', 'Париж', 'Берлин']
 
-    const [citiesWeather, setCitiesWeather] = useState<object[]>([]);
+    const [citiesWeather, setCitiesWeather] = useState<IWeatherData[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
@@ -15,12 +16,12 @@ const TrendingCitiesController = (): JSX.Element => {
 
     const getWeather = async () => {
         setIsLoading(true);
-        let citiesWeather: object[] = [];
+        let citiesWeather: IWeatherData[] = [];
 
         for (const city of trendingCities) {
-            const res = await axios.post(forecastFinderUrl, { city: city });
-            if (res.data.name)
-                citiesWeather.push({ ...res.data, city: city });
+            const weatherData = await getWeatherData(city);
+            if (weatherData)
+                citiesWeather.push(weatherData);
         }
 
         setCitiesWeather([...citiesWeather]);

@@ -2,6 +2,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import WeatherBoxController from '../WeatherBox/WeatherBoxController';
 import LoadingIndicator from '../LoadingIndicator/LoadingIndicator';
+import { IWeatherData } from '../weatherData';
 
 interface ICitySelectorProps {
     getForecastData: () => void;
@@ -10,7 +11,7 @@ interface ICitySelectorProps {
 }
 
 interface IForecastSearchProps {
-    weatherData: object | undefined;
+    weatherData: IWeatherData | undefined;
     isLoading: boolean;
     getForecastData: () => void;
     onCityInput: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
