@@ -21,7 +21,7 @@ const WeatherBoxController = ({ weatherData }: any): JSX.Element => {
     const getWeatherImage = (): string => {
         if (weatherData.rain)
             return require('./images/rain.png');
-        else if (weatherData.clouds.all > 60)
+        else if (weatherData.clouds > 60)
             return require('./images/clouds.png');
         return require('./images/sunny.png');
     }
@@ -29,7 +29,7 @@ const WeatherBoxController = ({ weatherData }: any): JSX.Element => {
     const getThemeColor = (): string => {
         if (weatherData.rain)
             return '#7d02f0';
-        else if (weatherData.clouds.all > 60)
+        else if (weatherData.clouds > 60)
             return '#02b0f0';
         return "#bc9c84";
     }
