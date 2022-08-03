@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { IWeatherData } from '../weatherData';
 import WeatherBoxView from './WeatherBoxView';
 
-const WeatherBoxController = ({ weatherData }: any): JSX.Element => {
+interface IWeatherBoxControllerProps {
+    weatherData: IWeatherData;
+}
 
-    const toTwoDigit = (num: number): string => num < 10 ? '0' + num : num.toString(); 
+const WeatherBoxController: React.FC<IWeatherBoxControllerProps> = ({ weatherData }) => {
+
+    const toTwoDigit = (num: number): string => num < 10 ? '0' + num : num.toString();
 
     const getTimeString = (): string => {
         let curDate = new Date();
