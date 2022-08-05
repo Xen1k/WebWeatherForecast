@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 const NavbarView = (): JSX.Element => (
     <nav className="navbar-container">
-        <p className="navbar-title"> Погода </p>
+        <p className="navbar-title"> Xenik Weather </p>
         <NavLink className="navlink-container" to="/search">
             Поиск города
         </NavLink>

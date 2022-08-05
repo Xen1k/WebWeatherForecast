@@ -1,0 +1,9 @@
+.search-button {
+    aspect-ratio: 1;
+    height: 64px;
+    font-size: 8px;
+}
+
+.search-bar {
+    width: 100%;
+}

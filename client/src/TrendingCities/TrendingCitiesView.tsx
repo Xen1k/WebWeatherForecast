@@ -12,7 +12,7 @@ interface ITrendingCitiesProps {
 const TrendingCitiesView: React.FC<ITrendingCitiesProps> = ({ citiesWeather, isLoading }) => (
     <div className='trending-cites-container'>
         {isLoading && <LoadingIndicator />}
-        {!isLoading && citiesWeather.map((weatherData: IWeatherData) => <WeatherBoxController weatherData={weatherData} />)}
+        {!isLoading && citiesWeather.map((weatherData: IWeatherData, index: number) => <WeatherBoxController key={index} weatherData={weatherData} />)}
     </div>
 )
 
