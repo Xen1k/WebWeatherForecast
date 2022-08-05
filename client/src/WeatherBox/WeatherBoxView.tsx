@@ -1,32 +1,29 @@
 import { capitalize } from '@material-ui/core';
+import { colors } from '../settings';
 import { IWeatherData } from '../weatherData';
+import { AspectRatio } from 'react-aspect-ratio';
 import './WeatherBox.css'
 
-
-interface IWeatherBoxProps {
+interface IWeatherBoxViewProps {
     weatherData: IWeatherData;
+    height: number;
     getWeatherImage: () => string;
-    getTimeString: () => string;
-    getDateString: () => string;
-    getThemeColor: () => string;
 }
 
-const WeatherBoxView: React.FC<IWeatherBoxProps> = ({ weatherData, getWeatherImage, getTimeString, getDateString, getThemeColor }) => (
-    <div className='weather-data-container' style={{ backgroundColor: getThemeColor() }}>
-        <div style={{ display: 'flex', flex: 1, flexDirection: 'row', width: '80%', justifyContent: 'space-between' }}>
-            <p style={{ fontWeight: 'bold', fontSize: 25, alignSelf: 'center' }}> {capitalize(weatherData.city)} </p>
-            <p style={{ alignSelf: 'center' }}> {getTimeString()}  </p>
-        </div>
-        <div style={{ display: 'flex', flex: 1.5 }}>
-            <img src={getWeatherImage()} style={{ height: 80, alignSelf: 'center', justifySelf: 'center' }} />
-        </div>
-        <div className='weather-inner-container'>
-            <p style={{ fontWeight: 'bold', fontSize: 27 }}> {parseInt(weatherData.temp)}° </p>
-            <p style={{ fontSize: 20 }}> {getDateString()} </p>
-            <div>
-                <p style={{ fontSize: 15 }}> Min: {parseInt(weatherData.temp_min)}° </p>
-                <p style={{ fontSize: 15 }}> Max: {parseInt(weatherData.temp_max)}° </p>
+const WeatherBoxView: React.FC<IWeatherBoxViewProps> = ({ weatherData, getWeatherImage, height }) => (
+    <div className='weather-data-container' style={{ backgroundColor: colors.tile, color: colors.text, height: height }}>
+        <div className='data-upper-container'>
+            <div style={{ flex: 1 }}>
+                <p style={{ flex: 1, fontSize: 30, fontWeight: 'bold', whiteSpace: 'nowrap' }}>{weatherData.city}</p>
+                <p>{weatherData.cloudsDescrition}</p>
+                <p>{weatherData.rainDescription}</p>
             </div>
+            <img src={getWeatherImage()} className="weather-image" />
+        </div>
+        <div style={{ flex: 0.7 }} />
+        <div className='data-bottom-container'>
+            <p style={{ flex: 1, paddingTop: 30 }}>Ощущается как {weatherData.feelsLike}°</p>
+            <p style={{ flex: 1, fontSize: 100, fontWeight: 'bold' }}>{weatherData.temp}°</p>
         </div>
     </div>
 )

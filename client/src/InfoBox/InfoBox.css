@@ -1,0 +1,9 @@
+.info-box-container {
+    display: flex;
+    height: 150px;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 20px;
+    aspect-ratio: 1;
+    flex-direction: column;
+}

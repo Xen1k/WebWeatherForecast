@@ -15,8 +15,10 @@ const ForecastSearchController = (): JSX.Element => {
         setIsLoading(true);
         if (city.length === 0)
             alert('Вы не ввели город')
-        const resData: IWeatherData | undefined = await getWeatherData(city);
-        resData ? setWatherData(resData) :  alert('Такого города нет');
+        else {
+            const resData: IWeatherData | undefined = await getWeatherData(city);
+            resData ? setWatherData(resData) : alert('Такого города нет');
+        }
         setIsLoading(false);
     }
 
@@ -30,6 +32,8 @@ const ForecastSearchController = (): JSX.Element => {
         />
     )
 }
+
+
 
 export default ForecastSearchController;
 

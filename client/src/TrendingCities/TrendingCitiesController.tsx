@@ -5,7 +5,7 @@ import { getWeatherData, IWeatherData } from "../weatherData";
 import TrendingCitiesView from "./TrendingCitiesView";
 
 const TrendingCitiesController = (): JSX.Element => {
-    const trendingCities: string[] = ['Лондон', 'Нью-Йорк', 'Москва', 'Санкт Петербург', 'Париж', 'Берлин']
+    const trendingCities: string[] = ['Лондон', 'Нью-Йорк', 'Москва', 'Санкт-Петербург', 'Париж', 'Берлин', 'Токио', 'Чикаго', 'Рим', 'Хельсинки', 'Мадрид']
 
     const [citiesWeather, setCitiesWeather] = useState<IWeatherData[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
