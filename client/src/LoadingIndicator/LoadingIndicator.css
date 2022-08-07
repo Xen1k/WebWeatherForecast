@@ -5,6 +5,7 @@
     justify-content: center;
     width: 80vw;
     height: 80vh;
+    --spinner-color: black;
 }
 
 .loading-spinner:after {
@@ -12,8 +13,8 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    border: 6px solid #000;
-    border-color: #000 transparent #000 transparent;
+    border: 6px solid var(--spinner-color);
+    border-color: var(--spinner-color) transparent var(--spinner-color) transparent;
     animation: loading-spinner 1.2s linear infinite;
 }
 
@@ -21,7 +22,6 @@
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(360deg);
     }

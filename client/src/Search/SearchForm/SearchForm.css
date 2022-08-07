@@ -1,0 +1,9 @@
+.search-form {
+    display: flex;
+    margin: 30px;
+
+}
+
+.search-bar {
+    margin: 0px 5px;
+}

@@ -1,9 +1,15 @@
 .info-box-container {
     display: flex;
-    height: 150px;
+    flex: 1;
     margin: 5px;
     padding: 20px;
+    padding-bottom: 0px;
     border-radius: 20px;
     aspect-ratio: 1;
     flex-direction: column;
+}
+
+.value-text {
+    font-weight: bold;
+    font-size: 30px;
 }

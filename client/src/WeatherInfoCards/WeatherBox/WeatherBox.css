@@ -1,18 +1,19 @@
 .weather-data-container {
     display: flex;
-    height: 350px;
     margin: 5px;
-    padding: 20px;
+    margin-top: 0px;
     border-radius: 20px;
     aspect-ratio: 1;
     flex-direction: column;
 }
 
-p {
-    margin: 5px;
+.small-info-text {
+    font-size: 15;
+    margin: 0 0;
 }
 
 .data-upper-container {
+    padding: 20px;
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -26,10 +27,12 @@ p {
     overflow: hidden;
     flex: 3;
     flex-direction: column;
+    justify-content: flex-end;
+    padding: 0px 20px;
 }
 
 
 .weather-image {
-    width: 20%;
+    width: 21%;
     aspect-ratio: 1;
 }

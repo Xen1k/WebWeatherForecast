@@ -9,7 +9,7 @@ import {
 import './App.css';
 
 import CreatorInfoController from './CreatorInfo/CreatorInfoController';
-import ForecastSearchController from './ForecastSearch/ForecastSearchController';
+import ForecastSearchController from './Search/ForecastSearch/ForecastSearchController';
 import NavbarController from './Navbar/NavbarController';
 import TrendingCitiesController from './TrendingCities/TrendingCitiesController';
 
@@ -21,10 +21,10 @@ const App = () => {
       <BrowserRouter>
         <NavbarController />
         <Routes>
-          <Route path="/search" element={<ForecastSearchController />} />
           <Route path="/trending" element={<TrendingCitiesController />} />
+          <Route path="/search" element={<ForecastSearchController />} />
           <Route path="/info" element={<CreatorInfoController />} />
-          <Route path="*" element={<Navigate to="/search" replace />} />
+          <Route path="*" element={<Navigate to="/trending" replace />} />
         </Routes>
       </BrowserRouter>
     </div>
