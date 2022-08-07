@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { IWeatherData } from '../weatherData';
+import { IWeatherData } from '../../weatherData';
 import WeatherBoxView from './WeatherBoxView';
 
 interface IWeatherBoxControllerProps {
     weatherData: IWeatherData;
-    height?: number;
+    style?: React.CSSProperties;
 }
 
-const WeatherBoxController: React.FC<IWeatherBoxControllerProps> = ({ weatherData, height }) => {
+const WeatherBoxController: React.FC<IWeatherBoxControllerProps> = ({ weatherData, style }) => {
 
     const getWeatherImage = (): string => {
         if (weatherData.rain)
@@ -20,8 +20,8 @@ const WeatherBoxController: React.FC<IWeatherBoxControllerProps> = ({ weatherDat
     return (
         <WeatherBoxView
             weatherData={weatherData}
-            height={height || 300}
             getWeatherImage={getWeatherImage}
+            style={style}
         />
     )
 }

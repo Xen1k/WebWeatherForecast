@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ForecastSearchView from './ForecastSearchView'
-import { getWeatherData, IWeatherData } from '../weatherData';
+import { getWeatherData, IWeatherData } from '../../weatherData';
 
 const ForecastSearchController = (): JSX.Element => {
 
@@ -11,7 +11,8 @@ const ForecastSearchController = (): JSX.Element => {
 
     const onCityInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => setCity(e.target.value);
 
-    const getForecastData = async () => {
+    const getForecastData = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+        e.preventDefault();
         setIsLoading(true);
         if (city.length === 0)
             alert('Вы не ввели город')
@@ -26,7 +27,6 @@ const ForecastSearchController = (): JSX.Element => {
         <ForecastSearchView
             onCityInput={onCityInput}
             getForecastData={getForecastData}
-            city={city}
             weatherData={weatherData}
             isLoading={isLoading}
         />

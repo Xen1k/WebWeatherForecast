@@ -1,0 +1,25 @@
+.search-form {
+    display: flex;
+    margin: 30px;
+}
+
+.search-bar {
+    margin: 0px 5px;
+}
+
+.search-page-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.info-column {
+    padding: 0px 6px !important;
+}
+
+@media (max-width: 990px) {
+    .info-column {
+        padding: 10px 12px !important;
+    }
+}

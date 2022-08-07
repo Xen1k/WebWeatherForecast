@@ -1,6 +1,4 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { forecastFinderUrl } from "../settings";
 import { getWeatherData, IWeatherData } from "../weatherData";
 import TrendingCitiesView from "./TrendingCitiesView";
 
