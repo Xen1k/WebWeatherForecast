@@ -1,13 +1,13 @@
 import SearchPageView from './SearchPageView'
 import { IWeatherData } from '../../weatherData';
-import { useSelector } from 'react-redux';
+import useAppSelector from '../../hooks/useAppSelector';
+import { AppState } from '../../app/store';
 
 
 const SearchPageController = (): JSX.Element => {
 
-    // Change ANY!
-    const weatherData: IWeatherData | undefined = useSelector((state: any) => state.searchPageReducer.weatherData);
-    const isLoading: boolean = useSelector((state: any) => state.searchPageReducer.isLoading);
+    const weatherData: IWeatherData | undefined = useAppSelector((state: AppState) => state.searchPageReducer.weatherData);
+    const isLoading: boolean = useAppSelector((state: AppState) => state.searchPageReducer.isLoading);
 
     return (
         <SearchPageView

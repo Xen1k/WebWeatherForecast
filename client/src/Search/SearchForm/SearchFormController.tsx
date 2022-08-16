@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { NavigateFunction, useNavigate, useLocation, Location } from 'react-router-dom';
 import { getWeatherData, IWeatherData } from '../../weatherData';
 import SearchFormView from './SearchFormView';
 import { setWeatherData, setLoading } from '../SearchPage/searchPageSlice';
+import useAppDispatch, { AppDispatch } from '../../hooks/useAppDispatch';
 
 interface ISearchFormControllerProps {
     style?: React.CSSProperties;
@@ -15,7 +15,7 @@ const SearchFormController: React.FC<ISearchFormControllerProps> = ({ style, inp
 
     const [city, setCity] = useState<string>('');
 
-    const dispatch = useDispatch()
+    const dispatch: AppDispatch = useAppDispatch()
 
     const navigate: NavigateFunction = useNavigate();
     const location: Location = useLocation();
