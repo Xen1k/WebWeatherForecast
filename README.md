@@ -1,7 +1,7 @@
 # WebWeatherForecast
 URL: https://weather-forecast-xenik-client.herokuapp.com/  
 FRONTEND:  
--React.js + Redux toolkit
+-React.js + Redux toolkit  
 -Typescript  
 -Bootstrap  
 -MVC  
