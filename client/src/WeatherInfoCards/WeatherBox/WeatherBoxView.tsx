@@ -1,4 +1,3 @@
-import { capitalize } from '@material-ui/core';
 import { colors } from '../../settings';
 import { IWeatherData } from '../../weatherData';
 import './WeatherBox.css'

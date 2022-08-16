@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IWeatherData } from '../../weatherData';
 import WeatherBoxView from './WeatherBoxView';
 

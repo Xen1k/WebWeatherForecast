@@ -1,27 +1,23 @@
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import LoadingIndicator from '../../LoadingIndicator/LoadingIndicator';
 import { IWeatherData } from '../../weatherData';
 import InfoBoxController from '../../WeatherInfoCards/InfoBox/InfoBoxController';
-import './ForecastSearch.css'
+import './SearchPage.css'
 import WeatherBoxController from '../../WeatherInfoCards/WeatherBox/WeatherBoxController';
+import SearchFormController from '../SearchForm/SearchFormController';
 
-interface ISearchFormProps {
-    getForecastData: (e: React.FormEvent<HTMLFormElement>) => void;
-    onCityInput: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-}
 
-interface IForecastSearchProps extends ISearchFormProps {
+interface IForecastSearchProps {
     weatherData: IWeatherData | undefined;
     isLoading: boolean;
 }
 
 
-const ForecastSearchView: React.FC<IForecastSearchProps> = ({ weatherData, isLoading, getForecastData, onCityInput }) => (
-    <div className='search-page-container' style={{}}>
-        <SearchForm
-            getForecastData={getForecastData}
-            onCityInput={onCityInput}
-        />
+const SearchPageView: React.FC<IForecastSearchProps> = ({ weatherData, isLoading }) => (
+    <div className='search-page-container'>
+        <div className='d-lg-none' style={{ margin: 30 }}>
+            <SearchFormController />
+        </div>
         {isLoading && <LoadingIndicator />}
         {!isLoading && weatherData &&
             <Container>
@@ -47,12 +43,5 @@ const ForecastSearchView: React.FC<IForecastSearchProps> = ({ weatherData, isLoa
     </div >
 )
 
-const SearchForm: React.FC<ISearchFormProps> = ({ getForecastData, onCityInput }) => (
-    <Form className='search-form' onSubmit={e => getForecastData(e)}>
-        <Form.Control className='search-bar' onChange={e => onCityInput(e)} name='city' type='text' placeholder="Введите город" />
-        <Button variant="primary" type="submit"> Искать </Button>
-    </Form>
-)
 
-
-export default ForecastSearchView;
+export default SearchPageView;

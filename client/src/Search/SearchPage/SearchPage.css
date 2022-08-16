@@ -1,17 +1,9 @@
-.search-form {
-    display: flex;
-    margin: 30px;
-}
-
-.search-bar {
-    margin: 0px 5px;
-}
-
 .search-page-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
+    margin-top: 40px;
 }
 
 .info-column {
@@ -20,6 +12,9 @@
 
 @media (max-width: 990px) {
     .info-column {
-        padding: 10px 12px !important;
+        padding: 10px 8px !important;
+    }
+    .search-page-container {
+        margin-top: 0px;
     }
 }
